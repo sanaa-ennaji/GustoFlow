@@ -17,6 +17,7 @@ This project will address the following key issues in restaurant management:
 - **NgRx** - State management library for Angular to handle global application state.
 - **LocalStorage** - For storing application data and ensuring persistence.
 - **Angular Material** - UI components for building modern, responsive interfaces.
+
 ![alt text](public/state-management-lifecycle.png)
 
 ## Features
@@ -24,6 +25,27 @@ This project will address the following key issues in restaurant management:
 - **Order Management**: Allows restaurant staff to view and manage orders.
 - **Inventory Tracker**: Monitors stock levels and sends alerts when items are running low.
 - **NgRx State Management**: Utilizes NgRx Store, Actions, Reducers, Selectors, and Effects to manage global state in a reactive way.
+
+## Project Structure 
+
+src/  
+├── app/  
+│   ├── core/  
+│   │   ├── services/     
+│   ├── shared/  
+│   │   ├── components/  
+│   │   └── utilities/  
+│   ├── features/   
+│   │   ├── dashboard/  
+│   │   └── repas/  
+│   ├── store/  
+│   │   ├── actions/  
+│   │   ├── reducers/  
+│   │   ├── effects/  
+│   │   ├── selectors/  
+│   │   └── state/  
+│   └── app.component.ts  
+└── assets/
 
 ## Setup
 
@@ -38,12 +60,13 @@ This project will address the following key issues in restaurant management:
    git clone https://github.com/sanaa-ennaji/GustoFlow
    cd restaurant-management
 
-```
+   ```
 Install NgRx if Not Already Installed:
 First, ensure you have NgRx installed in your project.
 
  ```bash
 ng add @ngrx/store
 npm install @ngrx/effects @ngrx/store-devtools @ngrx/entity
-```
+ng serve
+   ```
 - Visit http://localhost:4200 to see the application in action.
