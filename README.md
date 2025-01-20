@@ -37,7 +37,7 @@ src/
 │   │   └── utilities/  
 │   ├── features/   
 │   │   ├── dashboard/  
-│   │   └── repas/  
+│   │   └── menu/  
 │   ├── store/  
 │   │   ├── actions/  
 │   │   ├── reducers/  
@@ -58,7 +58,7 @@ src/
 1. Clone the repository:
    ```bash
    git clone https://github.com/sanaa-ennaji/GustoFlow
-   cd restaurant-management
+   cd Gusto-Flow
 
    ```
 Install NgRx if Not Already Installed:
