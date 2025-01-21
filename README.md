@@ -36,7 +36,7 @@ src/
 │   │   ├── components/  
 │   │   └── utilities/  
 │   ├── features/   
-│   │   ├── dashboard/  
+│   │   ├── admin/  
 │   │   └── menu/  
 │   ├── store/  
 │   │   ├── actions/  
@@ -69,4 +69,9 @@ ng add @ngrx/store
 npm install @ngrx/effects @ngrx/store-devtools @ngrx/entity
 ng serve
    ```
+   - to create a components for example user create
+    
+     ```bash
+     ng generate component features/admin/users/user-create
+     ```
 - Visit http://localhost:4200 to see the application in action.
