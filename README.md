@@ -69,9 +69,9 @@ ng add @ngrx/store
 npm install @ngrx/effects @ngrx/store-devtools @ngrx/entity
 ng serve
    ```
-   - to create a components for example user create
+   - to create a components for example plate edit
     
      ```bash
-     ng generate component features/admin/users/user-create
+     ng generate component features/admin/users/plate-edit
      ```
 - Visit http://localhost:4200 to see the application in action.
