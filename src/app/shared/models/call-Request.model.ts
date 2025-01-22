@@ -2,7 +2,9 @@ import { Table } from './table.model';
 
 export interface CallRequest {
   id: string;
-  table: Table;
+  requestType: String;
   RequestStatus: String;
+  table: Table;
+ 
 }
 
