@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
-import {FooterComponent} from './shared/components/footer/footer.component';
+import {SideBarComponent} from './shared/components/side-bar/side-bar.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavBarComponent, FooterComponent],
+  imports: [RouterOutlet,SideBarComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  standalone: true,
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'gusto-flow';
+  isSidebarVisible = true;
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
 }
