@@ -65,6 +65,7 @@ Install NgRx if Not Already Installed:
 First, ensure you have NgRx installed in your project.
 
  ```bash
+ npm install
 ng add @ngrx/store
 npm install @ngrx/effects @ngrx/store-devtools @ngrx/entity
 ng serve
