@@ -19,6 +19,8 @@
             "polyfills": [
               "zone.js"
             ],
+
+
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -29,7 +31,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/flowbite/dist/flowbite.js"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -84,6 +88,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/assets",
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "public"
