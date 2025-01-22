@@ -1,54 +1,122 @@
-/* Style global de la navbar */
-.navbar {
-  background-color: #333;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+/* Top Bar */
+.top-bar {
+  background-color: #474747;
   color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
+  padding: 10px 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 14px;
+}
+
+.contact-info span {
+  margin-right: 20px;
+}
+
+.contact-info span i {
+  margin-right: 8px;
+}
+
+.social-icons a {
+  color: #fff; /* Icônes en noir */
+  margin-left: 10px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 130px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 30px !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  color: #474747 !important;
+}
+
+.media {
+  background-color: #F9F9F71F;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+.px{
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2.9rem;
+  gap: 25px;
 }
 
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
+.nav-links li a {
   text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #666;
+}
+
+.nav-links li a.active {
+  background-color: #d3d3c3;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.btn-book {
+  border: 2px solid #000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #000;
   color: #fff;
-  font-weight: bold;
 }
 
-.nav-links a:hover {
-  color: #f4a261;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .btn-book {
+    margin-top: 10px;
+  }
+
 }
 
-.btn {
-  background-color: #f4a261;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #e76f51;
-}
