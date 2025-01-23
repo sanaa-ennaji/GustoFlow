@@ -9,19 +9,32 @@ import { of } from 'rxjs';
 export class AuthEffects {
   constructor(private actions$: Actions, private authService: AuthService) {}
 
+  private isTokenValid(token: string): boolean {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1])); 
+      const expirationTime = payload.exp * 1000;
+      return expirationTime > Date.now(); 
+    } catch (e) {
+      return false;
+    }
+  }
+  
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(login),
       mergeMap(({ credentials }) =>
-       
           this.authService.login(credentials).pipe(
             map((response) => {
-              localStorage.setItem('authToken', response.token); 
-              return loginSuccess({  user: { email: response.email, role: response.role, token: response.token },
-                token: response.token, });
-            }),
-
-
+                if (this.isTokenValid(response.token)) {
+                    localStorage.setItem('authToken', response.token); 
+                    return loginSuccess({
+                      user: { email: response.email, role: response.role, token: response.token },
+                      token: response.token,
+                    });
+                  } else {
+                    return loginFailure({ error: 'Token is invalid or expired' });
+                  }
+                }),
           catchError((error) =>
             of(loginFailure({ error: error.error?.message || 'Login failed' }))
           )
@@ -29,4 +42,5 @@ export class AuthEffects {
       )
     )
   );
+
 }

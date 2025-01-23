@@ -19,19 +19,7 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
 
-  setToken(token: string): void {
-    localStorage.setItem('authToken', token);
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('authToken');
-  }
-
-  clearToken(): void {
+  logout(): void {
     localStorage.removeItem('authToken');
-  }
-
-  isLoggedIn(): boolean {
-    return !!this.getToken();
   }
 }
