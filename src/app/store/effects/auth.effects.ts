@@ -14,8 +14,15 @@ export class AuthEffects {
       ofType(login),
       mergeMap(({ credentials }) =>
         this.authService.login(credentials).pipe(
-          map((user) => loginSuccess({ user })),
-          catchError((error) => of(loginFailure({ error: error.message })))
+          map((response) =>
+            loginSuccess({
+              user: { email: response.email, role: response.role, token: response.token },
+              token: response.token, // Pass the token explicitly
+            })
+          ),
+          catchError((error) =>
+            of(loginFailure({ error: error.error?.message || 'Login failed' }))
+          )
         )
       )
     )

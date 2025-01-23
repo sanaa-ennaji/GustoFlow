@@ -5,7 +5,7 @@ import { login, loginSuccess, loginFailure, logout } from '../actions/auth.actio
 export const authReducer = createReducer(
   initialAuthState,
   on(login, (state) => ({ ...state, loading: true, error: null })),
-  on(loginSuccess, (state, { user, token }) => ({ ...state, user, token, loading: false })),
+  on(loginSuccess, (state, { user }) => ({ ...state, user, loading: false })),
   on(loginFailure, (state, { error }) => ({ ...state, error, loading: false })),
   on(logout, () => initialAuthState)
 );
