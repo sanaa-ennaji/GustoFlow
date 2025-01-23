@@ -1,170 +1,165 @@
 <div class="bg-white min-h-screen flex items-center justify-end">
-  <div
-    class=" flex-1 flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-6xl sm:p-6 sm:my-2 sm:mx-12 sm:rounded-2xl">
-    <!-- Content -->
-    <div class="flex-1 px-2 sm:px-0">
-      <div class="mb-10 sm:mb-0 mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div
-          class="group bg-[#DBDFD0] py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <a
-            class="bg-[#F9F9F7] text-white/50 group-hover:text-white group-hover:smooth-hover flex w-20 h-20 rounded-full items-center justify-center"
-            href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-[#474747] h-10 w-10" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-            </svg>
-          </a>
-          <a class="text-[#2C2F24] group-hover:text-white group-hover:smooth-hover text-center" href="#">Create
-            Server</a>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
+    <div
+            class=" flex-1 flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-6xl sm:p-6 sm:my-2 sm:mx-12 sm:rounded-2xl">
+        <!-- Content -->
+        <div class="flex-1 px-2 sm:px-0">
+            <div class="mb-10 sm:mb-0 mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div
+                        class="group bg-[#DBDFD0] py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <a
+                            class="bg-[#F9F9F7] text-white/50 group-hover:text-white group-hover:smooth-hover flex w-20 h-20 rounded-full items-center justify-center"
+                            href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-[#474747] h-10 w-10" fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                    </a>
+                    <a class="text-[#2C2F24] group-hover:text-white group-hover:smooth-hover text-center" href="#">Create
+                        Server</a>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(1)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 1"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(2)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 2"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(3)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 3"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(4)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 4"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(5)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 5"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(6)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 6"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
+                <div class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
+                    <div class="absolute top-4 right-4">
+                        <button (click)="toggleMenu(7)" class="text-[#2C2F24] hover:text-[#AD343E]">
+                            <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
+                        </button>
+                        <div *ngIf="openCardId === 7"
+                             class="absolute right-0 mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
+                            <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
+                            </button>
+                            <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
+                                <i class="fa-solid fa-trash-can mr-2"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
+                         src="assets/users/server.png" alt="cuisine" />
+                    <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
+                    <p class="text-[#2C2F24]">Server</p>
+                </div>
             </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
         </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-        <div
-          class="relative group bg-[#F9F9F7] shadow-md py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-[#DBDFD0] hover:smooth-hover">
-          <div class="absolute top-4 right-4">
-            <button (click)="toggleMenu()" class="text-[#2C2F24] hover:text-[#AD343E]">
-              <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-            </button>
-            <div *ngIf="isMenuOpen"
-                 class="absolute right-0  mt-2 bg-white shadow-md rounded-md py-2 w-32 menu-enter menu-enter-active">
-              <button class="flex items-center px-4 py-2 text-sm text-[#2C2F24] hover:bg-gray-100 w-full">
-                <i class="fa-regular fa-pen-to-square mr-2"></i> Update
-              </button>
-              <button class="flex items-center px-4 py-2 text-sm text-[#AD343E] hover:bg-gray-100 w-full">
-                <i class="fa-solid fa-trash-can mr-2"></i> Delete
-              </button>
-            </div>
-          </div>
-          <img class="w-20 h-20 object-cover object-center rounded-full border-[1px] border-[#AD343E]"
-               src="assets/users/server.png" alt="cuisine"/>
-          <h4 class="text-[#2C2F24] text-2xl font-bold capitalize text-center">Ali</h4>
-          <p class="text-[#2C2F24]">server</p>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -9,16 +9,9 @@ import {CommonModule} from '@angular/common';
   styleUrl: './users-list.component.css'
 })
 export class UsersListComponent {
-  isMenuOpen: boolean = false;
+  openCardId: number | null = null;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  @HostListener('document:click', ['$event'])
-  closeMenu(event: Event) {
-    if (!(event.target as HTMLElement).closest('.group')) {
-      this.isMenuOpen = false;
-    }
+  toggleMenu(cardId: number): void {
+    this.openCardId = this.openCardId === cardId ? null : cardId;
   }
 }
