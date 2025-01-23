@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.table-wrapper {
+  @apply absolute transform -translate-x-1/2 cursor-pointer m-5;
+}
+
+.table-block {
+  @apply relative w-24 h-24 rounded-lg flex items-center justify-center border-0 transition-colors duration-200;
+}
+
+.table-available {
+  @apply hover:bg-green-200 border-green-500;
+}
+
+.table-occupied {
+  @apply border-red-500;
+}
+
+.table-info {
+  @apply absolute bottom-0 text-sm font-semibold text-center bg-white bg-opacity-75 p-1 rounded-lg;
+}
+
+.table-image {
+  @apply w-full h-full object-contain;
+}
+

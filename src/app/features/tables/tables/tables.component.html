@@ -1,0 +1,15 @@
+<div [class]="'table-wrapper ' + table.position" (click)="onTableClick()">
+  <div [class]="getTableClasses()">
+    <img
+      ngSrc="/icons/table.png"
+      alt="Table {{table.id}}"
+      class="table-image"
+      height="512" width="512"/>
+    <span class="table-info">
+      Table {{table.id}}
+      <br>
+      {{table.seats}} places
+    </span>
+  </div>
+
+</div>

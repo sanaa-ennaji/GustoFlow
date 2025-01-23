@@ -1,0 +1,7 @@
+.restaurant-layout {
+  @apply relative w-full h-96 bg-red-50 p-4 rounded-lg;
+}
+
+.tables-container {
+  @apply relative w-full h-full;
+}

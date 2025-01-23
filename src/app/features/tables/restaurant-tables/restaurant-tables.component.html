@@ -1,0 +1,10 @@
+<div class="restaurant-layout">
+  <div class="tables-container">
+    @for (table of tables$ | async; track table.id) {
+      <app-table
+        [table]="table"
+        (tableClick)="onTableSelect($event)">
+      </app-table>
+    }
+  </div>
+</div>
