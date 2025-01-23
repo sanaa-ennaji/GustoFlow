@@ -4,10 +4,11 @@ import { AuthService } from '../../../core/Services/auth.service';
 import { RequestLoginDTO } from '../../../shared/models/auth.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports : [CommonModule, FormsModule],
+  imports : [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
