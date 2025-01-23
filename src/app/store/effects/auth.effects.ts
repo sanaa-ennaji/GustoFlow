@@ -13,13 +13,15 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(login),
       mergeMap(({ credentials }) =>
-        this.authService.login(credentials).pipe(
-          map((response) =>
-            loginSuccess({
-              user: { email: response.email, role: response.role, token: response.token },
-              token: response.token, // Pass the token explicitly
-            })
-          ),
+       
+          this.authService.login(credentials).pipe(
+            map((response) => {
+              localStorage.setItem('authToken', response.token); 
+              return loginSuccess({  user: { email: response.email, role: response.role, token: response.token },
+                token: response.token, });
+            }),
+
+
           catchError((error) =>
             of(loginFailure({ error: error.error?.message || 'Login failed' }))
           )

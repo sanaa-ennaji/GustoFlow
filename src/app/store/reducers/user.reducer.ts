@@ -7,5 +7,6 @@ export const authReducer = createReducer(
   on(login, (state) => ({ ...state, loading: true, error: null })),
   on(loginSuccess, (state, { user }) => ({ ...state, user, loading: false })),
   on(loginFailure, (state, { error }) => ({ ...state, error, loading: false })),
-  on(logout, () => initialAuthState)
+  on(logout, () => {localStorage.removeItem('authToken');return initialAuthState; })
+  
 );
