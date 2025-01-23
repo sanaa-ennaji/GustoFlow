@@ -36,9 +36,9 @@
                 </label>
               </div>
               <div class="text-sm">
-                <a href="jajvascript:void(0);" class="text-GRAY-600 hover:underline font-semibold">
-                  Forgot your password?
-                </a>
+                <p *ngIf="errorMessage" class="text-GRAY-600 hover:underline font-semibold">
+                   {{ errorMessage }}
+                </p>
               </div>
             </div>
 
