@@ -27,6 +27,7 @@ export class AuthEffects {
             map((response) => {
                 if (this.isTokenValid(response.token)) {
                     localStorage.setItem('authToken', response.token); 
+                    localStorage.setItem('userRole', response.role);
                     return loginSuccess({
                       user: { email: response.email, role: response.role, token: response.token },
                       token: response.token,

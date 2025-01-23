@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './features/auth/login/login.component';
-import { AppComponent } from './app.component';
 import { HomepageComponent } from './features/homepage/homepage.component';
 
 export const routes: Routes = [

@@ -13,6 +13,6 @@ export interface RequestLoginDTO {
     username: string;
     email: string;
     password: string;
-    roleId?: number; 
+    roleId: number; 
   }
   
