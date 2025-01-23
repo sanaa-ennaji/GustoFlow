@@ -1,7 +1,7 @@
-import { User } from '../shared/models/user.model';
-import { Plate } from '../shared/models/plate.model';
-import { Category } from '../shared/models/category.model';
-import { Table } from '../shared/models/table.model';
+import { User } from '../../shared/models/user.model';
+import { Plate } from '../../shared/models/plate.model';
+import { Category } from '../../shared/models/category.model';
+import { Table } from '../../shared/models/table.model';
 export interface AppState {
   users: UserState;
   plates: PlateState;
