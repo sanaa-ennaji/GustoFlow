@@ -1,7 +1,11 @@
 .restaurant-layout {
-  @apply relative w-full h-96 bg-red-50 p-4 rounded-lg;
+  @apply flex justify-center align-bottom w-full h-96 bg-red-50 rounded-lg;
 }
 
 .tables-container {
-  @apply relative w-full h-full;
+  @apply flex flex-wrap justify-center w-full h-full;
+}
+
+.table-image{
+  @apply w-1/5
 }
