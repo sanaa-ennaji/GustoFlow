@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
+import {SideBarComponent} from './shared/components/side-bar/side-bar.component';
+import {UsersListComponent} from './features/admin/users/users-list/users-list.component';
 @Component({
   selector: 'app-root',
-  imports: [NavBarComponent, FooterComponent],
+  imports: [NavBarComponent, FooterComponent, SideBarComponent, UsersListComponent],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.css'
