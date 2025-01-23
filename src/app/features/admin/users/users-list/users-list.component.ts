@@ -14,4 +14,13 @@ export class UsersListComponent {
   toggleMenu(cardId: number): void {
     this.openCardId = this.openCardId === cardId ? null : cardId;
   }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event): void {
+    const targetElement = event.target as HTMLElement;
+
+    if (!targetElement.closest('.menu-container')) {
+      this.openCardId = null;
+    }
+  }
 }
