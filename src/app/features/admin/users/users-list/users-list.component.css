@@ -1,0 +1,11 @@
+/* Ajout d'une animation au menu déroulant */
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
