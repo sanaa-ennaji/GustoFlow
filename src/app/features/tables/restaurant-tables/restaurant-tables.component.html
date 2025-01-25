@@ -1,10 +1,23 @@
 <div class="restaurant-layout">
   <div class="tables-container">
     @for (table of tables$ | async; track table.id) {
-      <app-table
-        [table]="table"
-        (tableClick)="onTableSelect($event)">
-      </app-table>
+      <div
+        class="table-wrapper"
+        (click)="onTableSelect(table)"
+        [ngClass]="{'table-occupied': table.status === 'occupied'}"
+      >
+        <div class="table-block">
+          <img
+            ngSrc="/icons/table.png"
+            alt="Table {{table.id}}"
+            class="table-image"
+            height="512" width="512"
+          />
+          <div class="table-info">
+            Table {{table.id}}
+          </div>
+        </div>
+      </div>
     }
   </div>
 </div>

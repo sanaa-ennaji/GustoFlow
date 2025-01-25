@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { Dialog } from '@angular/cdk/dialog';
 import { WaiterCallDialogComponent } from '../waiter-call-dialog/waiter-call-dialog.component';
 import {TableComponent} from '../tables/tables.component';
@@ -9,7 +9,7 @@ import {TablesServiceService} from '../service/tables-service.service';
 @Component({
   selector: 'app-restaurant-tables',
   standalone: true,
-  imports: [CommonModule, TableComponent],
+  imports: [CommonModule, TableComponent, NgOptimizedImage],
   templateUrl: './restaurant-tables.component.html',
   styleUrls: ['./restaurant-tables.component.css']
 })

@@ -19,10 +19,10 @@ export class TablesServiceService {
     { id: 7, status: 'available', position: 'top-64 left-1/4' },
     { id: 8, status: 'available', position: 'top-64 left-2/4' },
     { id: 9, status: 'available', position: 'top-64 right-1/4' },
-    { id: 10, status: 'available', position: 'top-64 right-1/4' },
-    { id: 11, status: 'available', position: 'top-64 right-1/4' },
-    { id: 12, status: 'available', position: 'top-64 right-1/4' },
-    { id: 13, status: 'available', position: 'top-64 right-1/4' },
+    { id: 10, status: 'available', position: 'top-96 left-1/4' },
+    { id: 11, status: 'available', position: 'top-96 left-2/4' },
+    { id: 12, status: 'available', position: 'top-96 right-1/4' },
+    { id: 13, status: 'available', position: 'top-128 left-1/4' },
   ];
 
   private tablesSubject = new BehaviorSubject<Table[]>(this.tables);

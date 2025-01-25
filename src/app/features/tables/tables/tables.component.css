@@ -3,7 +3,7 @@
 }
 
 .table-wrapper {
-  @apply absolute transform -translate-x-1/2 cursor-pointer m-5;
+  @apply  absolute transform -translate-x-1/2 cursor-pointer m-5;
 }
 
 .table-block {
