@@ -1,0 +1,26 @@
+<div>
+  <h2>{{ category?.id ? 'Update Category' : 'Add Category' }}</h2>
+  <!--(ngSubmit)="onSubmit()"-->
+  <form >
+    <label for="name">Category Name:</label>
+    <input
+      id="name"
+      [(ngModel)]="newCategory.name"
+      name="name"
+      required
+      placeholder="Enter category name"
+    />
+
+    <button *ngIf="!newCategory.id" type="submit" class="btn-add">
+      Add Category
+    </button>
+
+    <button *ngIf="newCategory.id" type="submit" class="btn-update">
+      Update Category
+    </button>
+    <!--(click)="closeForm()"-->
+    <button type="button"  class="btn-close">
+      Cancel
+    </button>
+  </form>
+</div>
