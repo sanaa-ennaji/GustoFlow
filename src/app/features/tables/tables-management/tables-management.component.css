@@ -1,0 +1,98 @@
+.container {
+  padding: 2rem;
+  flex-direction: column ;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .add-table-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    .status-available {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .status-occupied {
+      background-color: #ffcdd2;
+      color: #c62828;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .btn-available {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-occupied {
+      background-color: #c62828;
+      color: white;
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  @apply flex justify-center
+
+}
+.table-image{
+  @apply w-8 ml-4
+}
+
+.table-col{
+  @apply w-auto flex
+}
+
+.actions{
+  @apply flex
+}

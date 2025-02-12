@@ -1,0 +1,31 @@
+.restaurant-layout {
+  @apply flex justify-center rounded-lg p-4;
+}
+
+.tables-container {
+  @apply grid grid-cols-5 gap-4 w-full h-screen max-w-4xl;
+}
+
+.table-wrapper {
+  @apply cursor-pointer transition-transform duration-200 hover:scale-105;
+}
+
+.table-block {
+  @apply relative w-full aspect-square rounded-lg flex flex-col items-center justify-center  transition-colors duration-200;
+}
+
+.table-block.table-occupied {
+  @apply border-red-500 opacity-70 cursor-not-allowed;
+}
+
+/*.table-block:not(.table-occupied) {*/
+/*  @apply border-green-500 hover:bg-green-100;*/
+/*}*/
+
+.table-image {
+  @apply w-1/2 h-2/3 object-contain;
+}
+
+.table-info {
+  @apply absolute bottom-2 text-sm font-semibold text-center bg-white bg-opacity-75 p-1 rounded-lg;
+}
