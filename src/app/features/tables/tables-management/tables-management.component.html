@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="header">
+    <h1>Restaurant Tables</h1>
+    <button (click)="showModal = true">
+      <img
+        ngSrc="/icons/add.png"
+
+        class="table-image"
+        height="512" width="512"/>
+    </button>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Table</th>
+      <th>Seats</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let table of tables">
+      <td class="table-col">{{ table.id }} <img
+        ngSrc="/icons/table.png"
+        alt="Table {{table.id}}"
+        class="table-image"
+        height="512" width="512"/></td>
+      <td>{{ table.seats }}</td>
+      <td>
+          <span
+            [ngClass]="{
+              'status-available': table.status === 'available',
+              'status-occupied': table.status === 'occupied'
+            }"
+          >
+            {{ table.status }}
+          </span>
+      </td>
+      <td>
+        <div class="actions">
+          <img
+            ngSrc="/icons/edit.png"
+            alt="Table {{table.id}}"
+            class="table-image"
+            height="512" width="512"/>
+          <img
+            ngSrc="/icons/delete.png"
+            alt="Table {{table.id}}"
+            class="table-image"
+            height="512" width="512"/>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <h2>Add New Table</h2>
+      <form>
+        <div class="form-group">
+          <label for="table-id">Table ID</label>
+          <input
+            id="table-id"
+            [(ngModel)]="newTable.id"
+            name="tableId"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="table-seats">Seats</label>
+          <input
+            id="table-seats"
+            [(ngModel)]="newTable.seats"
+            name="tableSeats"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="table-status">Status</label>
+          <select
+            id="table-status"
+            [(ngModel)]="newTable.status"
+            name="tableStatus"
+          >
+            <option value="available">Available</option>
+            <option value="occupied">Occupied</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" (click)="addTable()">Save</button>
+          <button type="button" (click)="showModal = false">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

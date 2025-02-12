@@ -1,0 +1,16 @@
+<div class="dialog-container">
+  <h2 class="dialog-title">Appeler le serveur</h2>
+  <div class="dialog-content">
+    <p>Voulez-vous appeler un serveur pour la table {{data.tableId}} ?</p>
+  </div>
+  <div class="dialog-actions">
+    <button class="btn btn-cancel" (click)="onNoClick()">Annuler</button>
+    <button class="btn btn-primary" (click)="onYesClick()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+      </svg>
+      Appeler le serveur
+    </button>
+  </div>
+</div>

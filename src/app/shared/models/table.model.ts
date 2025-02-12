@@ -1,8 +1,14 @@
 export interface Table {
-    id: string;
-    number: number;
-    secretCode: number;
-    tableStatus: String;
+  id: number;
+  status: 'available' | 'occupied';
+  position: string;
+}
+
+//     id: string;
+//     number: number;
+//     secretCode: number;
+//     tableStatus: String;
 
 
-  }
+//   }
+

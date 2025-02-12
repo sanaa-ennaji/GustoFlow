@@ -1,0 +1,31 @@
+.dialog-container {
+  @apply bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto;
+}
+
+.dialog-title {
+  @apply text-xl font-bold mb-4;
+}
+
+.dialog-content {
+  @apply mb-6;
+}
+
+.dialog-actions {
+  @apply flex justify-end gap-4;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg flex items-center gap-2;
+}
+
+.btn-cancel {
+  @apply bg-gray-100 hover:bg-gray-200;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.icon {
+  @apply w-5 h-5;
+}
