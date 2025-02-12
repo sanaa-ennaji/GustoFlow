@@ -68,7 +68,10 @@ First, ensure you have NgRx installed in your project.
  npm install
 ng add @ngrx/store
 npm install @ngrx/effects @ngrx/store-devtools @ngrx/entity
+npm install flowbite
+npm install @fortawesome/fontawesome-free
 ng serve
+
    ```
    - to create a components for example plate edit
     
