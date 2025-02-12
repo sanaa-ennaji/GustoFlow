@@ -1,26 +1,25 @@
-<div>
-  <h2>{{ category?.id ? 'Update Category' : 'Add Category' }}</h2>
-  <!--(ngSubmit)="onSubmit()"-->
-  <form >
-    <label for="name">Category Name:</label>
-    <input
-      id="name"
-      [(ngModel)]="newCategory.name"
-      name="name"
-      required
-      placeholder="Enter category name"
-    />
-
-    <button *ngIf="!newCategory.id" type="submit" class="btn-add">
-      Add Category
-    </button>
-
-    <button *ngIf="newCategory.id" type="submit" class="btn-update">
-      Update Category
-    </button>
-    <!--(click)="closeForm()"-->
-    <button type="button"  class="btn-close">
-      Cancel
-    </button>
-  </form>
+<div class="popup-overlay">
+  <div class="popup-form">
+    <h2>{{ selectedCategory?.id ? 'Update Category' : 'Add Category' }}</h2>
+    <form (ngSubmit)="submitForm()">
+      <label for="name">Category Name:</label>
+      <input
+        id="name"
+        [(ngModel)]="selectedCategory.name"
+        name="name"
+        required
+        placeholder="Enter category name" />
+      <div class="buttons">
+        <button *ngIf="!selectedCategory.id" type="submit" class="btn-add">
+          Add Category
+        </button>
+        <button *ngIf="selectedCategory.id" type="submit" class="btn-update">
+          Update Category
+        </button>
+        <button type="button" (click)="onClose()" class="btn-close">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

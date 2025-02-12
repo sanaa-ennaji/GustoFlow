@@ -5,9 +5,10 @@ import { RouterOutlet } from '@angular/router';
 import {SideBarComponent} from './shared/components/side-bar/side-bar.component';
 import {UsersListComponent} from './features/admin/users/users-list/users-list.component';
 import {CommonModule} from '@angular/common';
+import {CategoryFormComponent} from './features/admin/category/category-form/category-form.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, FooterComponent, SideBarComponent, UsersListComponent,CommonModule],
+  imports: [RouterOutlet, NavBarComponent, FooterComponent, SideBarComponent, UsersListComponent, CommonModule, CategoryFormComponent],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.css'

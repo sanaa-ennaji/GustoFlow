@@ -16,5 +16,8 @@ export class CategoryService {
       tap(categories => console.log('Données API:', categories))
     );
   }
+  addCategory(category: Category): Observable<Category> {
+    return this.http.post<Category>(`${this.apiUrl}`, category);
+  }
 
 }

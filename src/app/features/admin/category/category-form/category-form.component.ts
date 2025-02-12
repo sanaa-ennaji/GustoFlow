@@ -1,55 +1,31 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store';
+import {Component, Input, Output} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 import {Category} from '../../../../shared/models/category.model';
-import {FormsModule} from '@angular/forms';
-import {NgIf} from '@angular/common';
-
+import EventEmitter from 'node:events';
 
 @Component({
   selector: 'app-category-form',
+  standalone: true,
+  imports: [FormsModule, NgIf],
   templateUrl: './category-form.component.html',
-  styleUrls: ['./category-form.component.css'],
-  imports: [
-    FormsModule,
-    NgIf
-  ],
-  standalone: true
+  styleUrls: ['./category-form.component.css']
 })
-export class CategoryFormComponent implements OnInit {
-  @Input() category: Category | null = null;
-  @Output() formClosed = new EventEmitter<void>(); // Renommé pour éviter le conflit
+export class CategoryFormComponent {
+  // Déclare l'entrée pour recevoir la catégorie à modifier ou ajouter
+  @Input() selectedCategory: Category = { id: null, name: '' };
 
-  newCategory: Category = { id: '', name: ''};
+  @Output() categorySubmit = new EventEmitter<Category>();
+  @Output() formClose = new EventEmitter<void>();
 
-  constructor(private store: Store) {}
 
-  ngOnInit(): void {
-    if (this.category) {
-      this.newCategory = { ...this.category };
-    }
+  submitForm(): void {
+    if (!this.selectedCategory.name.trim()) { return; }
+    this.categorySubmit.emit(this.selectedCategory);
   }
 
-  /*onSubmit() {
-    if (this.newCategory.id) {
-      this.store.dispatch(updateCategory({ category: this.newCategory }));
-    } else {
-      this.newCategory.id = this.generateId();
-      this.store.dispatch(addCategory({ category: this.newCategory }));
-    }
-
-    this.resetForm();
-    this.formClosed.emit(); // Ferme le formulaire après soumission
+  onFormClose(): void {
+    this.formClose.emit();
   }
 
-  closeForm() {
-    this.formClosed.emit(); // Utilisation du nouveau nom
-  }
-
-  private generateId(): string {
-    return Math.random().toString(36).substring(2, 15);
-  }
-
-  resetForm() {
-    this.newCategory = { id: '', name: '', plates: [] };
-  }*/
 }
