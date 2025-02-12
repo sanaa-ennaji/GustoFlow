@@ -1,5 +1,5 @@
 export interface Table {
-    id: string;
-    number: number;
-    status: String;
-  }
+  id: number;
+  status: 'available' | 'occupied';
+  position: string;
+}
